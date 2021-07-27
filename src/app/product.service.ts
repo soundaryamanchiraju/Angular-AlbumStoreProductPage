@@ -1,14 +1,16 @@
+import {Http} from '@angular/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+
+import 'rxjs/add/operator/Map';
 
 @Injectable()
 export class ProductService {
-  private _albumUrl:string='assets/album.json';
+  private _albumUrl:string='../assets/album.json';
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http:Http) { }
   getAlbum(id:number){
 
-      return this._http.get(this._albumUrl).map((response:Response) => {
+      return this._http.get(this._albumUrl).map((response) => {
          response.json()
       });
   }
