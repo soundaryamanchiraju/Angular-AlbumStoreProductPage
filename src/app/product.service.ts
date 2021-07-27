@@ -17,8 +17,8 @@ export class ProductService {
               return this._http.get(this._albumUrl).map(response => <Album>response.json());
   }
   // tslint:disable-next-line: no-shadowed-variable
-  getProducts(): void : Observable<Product> {
-    this._http.get(this._productsUrl).map(res => <Product>res.json());
+  getProducts(): Observable<Product[]> {
+    return this._http.get(this._productsUrl).map(res => <Product[]>res.json());
   }
 
 }
