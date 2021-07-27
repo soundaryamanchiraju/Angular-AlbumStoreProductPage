@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-import 'rxjs/add/operator/Map';
+import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Rx';
 
 
