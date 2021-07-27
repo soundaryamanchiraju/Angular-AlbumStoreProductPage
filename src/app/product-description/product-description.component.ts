@@ -1,7 +1,9 @@
+import { Album } from './../album';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Rx';
+import { Album } from 'app/album';
 
 
 
@@ -11,11 +13,11 @@ import { Observable } from 'rxjs/Rx';
   styleUrls: ['./product-description.component.css']
 })
 export class ProductDescriptionComponent implements OnInit {
-albumInfo;
-  constructor(private _productService:ProductService) { }
+albumInfo: Album;
+  constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    this._productService.getAlbum(1).subscribe((res)=>{this.albumInfo = res} );
+    this._productService.getAlbum(1).subscribe((res) => {this.albumInfo = res} );
 
   }
 
